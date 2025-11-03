@@ -1,0 +1,232 @@
+:root {
+    --background: #393939;
+    --primary: #333;
+    --seconday: #555;
+    --active: rgb(110, 110, 110);
+    --text: white;
+    --message-info: gray;
+}
+
+@font-face {
+    font-family: 'ModeSeven';
+    src: url('../assets/Modeseven-L3n5.ttf');
+}
+
+
+body {
+    background-color: var(--background);
+    font-family: monospace;
+    color: var(--text);
+    margin: 0;
+}
+
+#main {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100vw - 20vw);
+    min-width: calc(100vw - 450px - 2px);
+    max-width: calc(100vw - 300px - 2px);
+    height: calc(100vh - 72px);
+    /* background-color: white; */
+}
+
+#messages {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+#side_nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 20vw;
+    height: 100vh;
+    min-width: 300px;
+    max-width: 450px;
+    background-color: var(--primary);
+    border-right: solid;
+    border-width: 2.5px;
+    border-color: var(--seconday);
+}
+
+#account {
+    position: absolute;
+    bottom: 0;
+    height: 70px;
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-width: 2.5px;
+    border-top: solid;
+    border-color: var(--seconday);
+    transition: all 0.3s ease;
+}
+
+#account:hover {
+    background-color: var(--seconday);
+}
+
+#account:hover span {
+    margin-left: 25px;
+}
+
+#account span {
+    font-size: 22px;
+    margin-left: 15px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: calc(90% - 12px);
+    transition: all 0.3s ease;
+}
+
+#account img {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: calc(0.7 * 70px - 4px);
+    padding: 5px;
+    border-radius: 7px;
+    background-color: var(--background);
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--seconday);
+    margin-right: 10px;
+    transition: margin 0.1s ease-out, color 1s ease;
+}
+
+#account img:hover {
+    margin-top: -2.5px;
+    background-color: var(--active);
+}
+
+/* Scrollbars */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--seconday); 
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--active); 
+}
+
+
+
+/* Messages */
+
+#messageBar {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 70px;
+    width: calc(100vw - 20vw);
+    min-width: calc(100vw - 450px - 2px);
+    max-width: calc(100vw - 300px - 2px);
+    background-color: var(--background);
+    border-top: solid;
+    border-width: 2.5px;
+    border-color: var(--seconday);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+
+.bar-icon {
+    height: calc(0.5 * 70px);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 10px;
+    margin-right: -10px;
+    background-color: var(--seconday);
+    padding: 10px;
+    border-radius: 7px;
+    transition: top 0.1s ease-out, color 1s ease;
+}
+
+.bar-icon:hover {
+    /* margin-top: -2.5px; */
+    top: 45%;
+    background-color: var(--active);
+}
+
+#messageTextBox {
+    position: absolute;
+    bottom: 0;
+    /* right: 0; */
+    margin-bottom: 9px;
+    overflow: hidden;
+    resize: none;
+    font-size: large;
+    /* transform: translateY(50%); */
+    
+    /* width: calc(90% - 55px); */
+    width: -webkit-fill-available;
+
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px;
+    border-radius: 7px;
+    max-height: 170px;
+    min-height: 30px;
+    height: 30px;
+    background-color: var(--primary);
+    color: var(--text);
+    font-family: 'ModeSeven';
+    /* transition: all 0.25s ease; */
+}
+#messageTextBox:focus {
+    outline: none;
+    /* background-color: var(--seconday); */
+}
+
+#messageList {
+    font-size: 140%; /* fix later? */
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.message {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 5px;
+    margin: 10px 5px;
+}
+
+.message-timestamp {
+    color: var(--message-info);
+}
+
+.message-user {
+    color: lightgray;
+}
+
+.message-body {
+    color: white;
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.event {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--message-info);
+}

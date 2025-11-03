@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OASIS LINK</title>
+    <link rel="stylesheet" href="style/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div id="side_nav">
+        <div id="account">
+            <span>Account</span>
+            <img src="https://jackboback.dev/res/assets/favicon.ico" alt="">
+        </div>
+    </div>
+    <div id="main">
+        <div id="messageList">
+            <div class="event date">
+                <span>Thursday October 16</span>
+            </div>
+            <!--example message-->
+            <div class="message">
+                <span class="message-timestamp">10:48:49 PM></span>
+                <span class="message-user">[user] </span>
+                <span class="message-body">Hello</span>
+            </div>
+        </div>
+    </div>
+    <div id="messageBar">
+        <img src="assets/upload.png" class="bar-icon" alt="">
+        <img src="assets/image.png" class="bar-icon" alt="">
+        <textarea onblur="resize_messageInput(this,true)" onfocus="resize_messageInput(this)" type="text" id="messageTextBox"></textarea>
+    </div>
+    <script src="scripts/index.js"></script>
+    
+    <script defer>
+        // $("#messageList").html(``)
+        // for (let i = 0; i < 50; i++) {
+        //     var v = ["hi","hello","baller","gurt"]
+        //     $("#messageList")[0].innerHTML += `
+        //     <div class="message"> <span class="message-timestamp">${getTimestamp()}> </span> <span class="message-user">[user2] </span> <span class="message-body">${v[Math.floor(Math.random() * v.length)]}</span> </div>
+        //     ` 
+        // }
+    </script>
+</body>
+</html>
